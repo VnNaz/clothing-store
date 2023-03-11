@@ -1,0 +1,122 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --main-color: #a8010b;
+    --color-lower-gray:#757575;
+    --color-gray: #cccccc;
+}
+html{
+    font-size: 62.5%;
+    
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    height: 2000px;
+}
+.clearfloat::after{
+    display: block;
+    content: "";
+    clear: both;
+}
+.closed{
+    display: none!important;
+}
+/* navmeny */
+.navmenu{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+}
+/* navmenu logo */
+.store_info{
+    display: flex;
+    align-items: center;
+    margin-top: 1.6rem;
+    margin-bottom: 3.2rem;
+}
+.store_info img.store_logo{
+    position: relative;
+    display: block;
+    max-width: 7.5rem;
+}
+.store_info p.store_slogan{
+    color: var(--main-color);
+    font-style: italic;
+}
+/* navmenu navigation */
+.navigation{
+    list-style: none;
+}
+.navigation li{
+    padding: 12px;
+    font-weight: bold;
+    color: var(--color-lower-gray);
+    font-size: 1.8rem;
+}
+.navigation li:hover{
+    color: whitesmoke;
+    background-color: var(--main-color);
+}
+.navigation li .navigation__arrow-down{
+    display: none;
+    float: right;   
+    margin-right: 1.6rem;   
+    transform: translateY(10%);
+}
+.navigation .cloth-styles{
+    margin-top: 8px;
+    display: none;
+}
+.navigation__arrow-right{
+    display: none;
+    animation: slideIn 0.3s ease-in-out;
+}
+.navigation .cloth-styles li{    
+    list-style: none;
+    color: black; 
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.cloth-styles li:hover .navigation__arrow-right{
+    display: inline-block;
+    margin-right: 8px;
+}
+.navigation .cloth-types:hover .cloth-styles li{
+    color: white;
+}
+.navigation .cloth-styles li:hover{
+    background-color: whitesmoke;
+    color: black!important;
+    font-weight: 700;
+}
+.navigation .cloth-styles i{
+    margin-right: 1.2rem;
+}
+
+.navigation li.active .navigation__arrow-down,
+.navigation li.active .cloth-styles{
+    display: block;
+}
+/* info_menu */
+.navmenu .info_menu{
+    position: absolute;
+    bottom: 0;
+    list-style: none;
+    padding: 16px;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
