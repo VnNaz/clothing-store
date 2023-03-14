@@ -26,6 +26,7 @@ body {
 .closed{
     display: none!important;
 }
+
 /* navmeny */
 .navmenu{
     position: fixed;
@@ -106,13 +107,145 @@ body {
 .navmenu .info_menu{
     position: absolute;
     bottom: 0;
+    left: 0;
+    right: 0;
     list-style: none;
-    padding: 16px;
+    min-height: 30%;
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
 }
-
+.navmenu .info_menu a{
+    display: block;
+    padding: 8px 16px;
+    color: black;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    transition: all .3s ease-in-out;
+}
+.navmenu .info_menu a:hover{
+    background-color: var(--color-lower-gray);
+    color: white;
+    transform: scale(1.05);
+}
+.navbar{
+    --navbar-height: 120px;
+    height: var(--navbar-height);
+    line-height: var(--navbar-height);
+}
+.navbar__title{
+    display: inline-block;
+    font-size: 3.2rem;
+    letter-spacing: 4px;
+}
+.navbar__inventory,
+.navbar__search{
+    float: right;
+    font-size: 2.4rem;
+    cursor: pointer;
+}
+.navbar__inventory{
+    margin-right: 2.4rem;
+}
+/* slide */
+.slide{
+    position: relative;
+    padding-top: 66.66666%;
+    background: url(/assets/imgs/slice.jpg) center center / cover no-repeat;
+}
+.slide::after{
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
+}
+.slide .slide__info{
+    position: absolute;
+    z-index: 1;
+    top: 32px;
+    left: 32px;
+    color: white;
+}
+.slide .slide__info .title{
+    font-size: 6.4rem;
+    font-weight: 400;
+}
+.slide .slide__info .subtitle{
+    margin-top: 1.2rem;
+    font-size: 3.6rem;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+.slide .slide__info .btn_buy{
+    border: none;
+    background: black;
+    color: white;
+    font-size: 1.8rem;
+    margin-top: 1.2rem;
+    padding: 1.6rem 2.8rem;
+    text-transform: uppercase;
+}
+.slide .slide__info .btn_buy:hover{
+    background: var(--main-color);
+}
+.list_cloth{
+    margin-top: 4.8rem;
+}
+.list_cloth .card{
+    position: relative;
+    padding-top: 125%;
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    cursor: pointer;
+    filter: grayscale(0.6);
+    transition: transform 0.3s ease-in-out;
+}
+.list_cloth .card:hover{
+    transform: scale(1.1);
+}
+.list_cloth .card .card__body{
+    /* display: none; */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: whitesmoke;
+    padding: 8px;
+    text-transform: capitalize;
+    background-color: var(--main-color);
+    animation: slideUp .5s ease;
+    display: none;
+    filter: grayscale(100%);
+}
+.list_cloth .card:hover .card__body{
+    display: block;
+}
+.card .card__body .card__title{
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+.card .card__body .card__price{
+    font-weight: bold;
+}
 @keyframes slideIn {
     from {
         transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
         opacity: 0;
     }
     to {

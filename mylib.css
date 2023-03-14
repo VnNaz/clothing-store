@@ -1,0 +1,31 @@
+.shadow-box{
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+}
+.list-unstyled{
+    list-style: none;
+}
+.row {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+.col{
+    padding-left: 8px;
+    padding-right: 8px;
+    float: left;
+}
+.growhover{
+    transition: all .2s ease-in-out;
+}
+.growhover:hover{
+    transform: scale(1.1);
+}
+.backgroundimg-brightness--low::after{
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
+}
